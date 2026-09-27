@@ -1,3 +1,11 @@
+# @stackline/load-plugin
+
+Maintained MIT-licensed fork of `load-plugin@5.1.0`. Preserves its `cwd`, `prefix`, `global`, and `key` options and Promise API. Requires Node.js 20.19+ on the 20.x line, or Node.js 22.12+.
+
+Uses `@npmcli/config@10.13` and `import-meta-resolve@4.2` to remove deprecated glob dependencies and the old resolver's `fs.Stats` warning. Missing-file and directory errors retain the previous fallback behavior. Global prefix detection does not load npm configuration or alter the host environment.
+
+Development: `npm ci`, `npm run build`, `npm test`, `npm run lint`. The upstream integration tests and global-prefix/fallback regressions run locally; declarations are generated from the preserved public JSDoc API.
+
 # load-plugin
 
 [![Build][build-badge]][build]
@@ -37,10 +45,10 @@ files.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+, 16.0+), install with [npm][]:
+In Node.js (20.19+ on the 20.x line, or 22.12+), install with [npm][]:
 
 ```sh
-npm install load-plugin
+npm install @stackline/load-plugin
 ```
 
 ## Use
@@ -48,7 +56,7 @@ npm install load-plugin
 Say we’re in this project (with dependencies installed):
 
 ```js
-import {loadPlugin, resolvePlugin} from 'load-plugin'
+import {loadPlugin, resolvePlugin} from '@stackline/load-plugin'
 
 console.log(await resolvePlugin('lint', {prefix: 'remark'}))
 // => '/Users/tilde/projects/oss/load-plugin/node_modules/remark-lint/index.js'
@@ -134,8 +142,8 @@ It exports the additional types `ResolveOptions` and `LoadOptions`.
 
 ## Compatibility
 
-This package is at least compatible with all maintained versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
+The supported Node.js versions for this fork are declared in `package.json`.
+This fork supports Node.js 20.19+ on the 20.x line, and Node.js 22.12+.
 It also works in Deno and modern browsers.
 
 ## Contribute

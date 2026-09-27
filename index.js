@@ -13,7 +13,7 @@ import {pathToFileURL, fileURLToPath} from 'url'
 import path from 'path'
 // @ts-expect-error: untyped
 import NpmConfig from '@npmcli/config'
-import {resolve as esmResolve} from 'import-meta-resolve'
+import {moduleResolve} from 'import-meta-resolve'
 
 const electron = process.versions.electron !== undefined
 const windows = process.platform === 'win32'
@@ -24,7 +24,12 @@ const nvm = process.env.NVM_BIN
 /* c8 ignore next */
 const globalsLibrary = windows ? '' : 'lib'
 
-const config = new NpmConfig({definitions: {}})
+// npmPath is required by modern config constructors. Only loadGlobalPrefix is
+// used here: no npmrc file or npm installation is read from this location.
+const config = new NpmConfig({
+  definitions: {},
+  npmPath: path.dirname(fileURLToPath(import.meta.url))
+})
 
 config.loadGlobalPrefix()
 
@@ -163,8 +168,10 @@ export async function resolvePlugin(name, options = {}) {
     try {
       // `import-meta-resolve` resolves from files, whereas `load-plugin` works
       // on folders, which is why we add a `/` at the end.
+      // moduleResolve retains v2's missing-file/directory errors; resolve in v4
+      // intentionally returns URLs for those paths, which breaks fallback.
       return fileURLToPath(
-        await esmResolve(name, pathToFileURL(base).href + '/')
+        moduleResolve(name, new URL(pathToFileURL(base).href + '/'))
       )
       // Bug with coverage on Node@12.
       /* c8 ignore next 1 */
