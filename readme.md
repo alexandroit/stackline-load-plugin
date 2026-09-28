@@ -1,48 +1,63 @@
 # @stackline/load-plugin
 
+> Resolve and load plugins, submodules, and files with the load-plugin 5 Promise API.
+
+[![npm version](https://img.shields.io/npm/v/@stackline/load-plugin.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/load-plugin)
+[![license](https://img.shields.io/npm/l/@stackline/load-plugin.svg?style=flat-square)](https://github.com/alexandroit/stackline-load-plugin/blob/main/license)
+[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-load-plugin)
+
+**[Documentation](https://github.com/alexandroit/stackline-load-plugin#readme)** |
+**[npm](https://www.npmjs.com/package/@stackline/load-plugin)** |
+**[Issues](https://github.com/alexandroit/stackline-load-plugin/issues)** |
+**[Repository](https://github.com/alexandroit/stackline-load-plugin)**
+
+**Package version:** `1.0.1`
+
+## Why this package?
+
 Maintained MIT-licensed fork of `load-plugin@5.1.0`. Preserves its `cwd`, `prefix`, `global`, and `key` options and Promise API. Requires Node.js 20.19+ on the 20.x line, or Node.js 22.12+.
 
 Uses `@npmcli/config@10.13` and `import-meta-resolve@4.2` to remove deprecated glob dependencies and the old resolver's `fs.Stats` warning. Missing-file and directory errors retain the previous fallback behavior. Global prefix detection does not load npm configuration or alter the host environment.
 
 Development: `npm ci`, `npm run build`, `npm test`, `npm run lint`. The upstream integration tests and global-prefix/fallback regressions run locally; declarations are generated from the preserved public JSDoc API.
 
-# load-plugin
-
-[![Build][build-badge]][build]
-[![Coverage][coverage-badge]][coverage]
-[![Downloads][downloads-badge]][downloads]
-
 Load submodules, plugins, or files.
 
-## Contents
-
-*   [What is this?](#what-is-this)
-*   [When to use this?](#when-to-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [`loadPlugin(name[, options])`](#loadpluginname-options)
-    *   [`resolvePlugin(name[, options])`](#resolvepluginname-options)
-*   [Types](#types)
-*   [Compatibility](#compatibility)
-*   [Contribute](#contribute)
-*   [License](#license)
-
-## What is this?
+### What is this?
 
 This package is useful when you want to load plugins.
 It resolves things like Node.js does, but supports a prefix (e.g., when given a
 prefix `remark` and the user provided value `gfm`, it can find `remark-gfm`),
 can load from several places, and optionally global too.
 
-## When to use this?
+### When to use this?
 
 This package is particularly useful when you want users to configure something
 with plugins.
 One example is `remark-cli` which can load remark plugins from configuration
 files.
 
-## Install
+## Compatibility
+
+| Item | Value |
+| --- | --- |
+| Package | `@stackline/load-plugin@1.0.1` |
+| Supported Node.js | `^20.19.0 || >=22.12.0` |
+| Module entry | `index.js` (ES modules) |
+| Runtime dependencies | 2 direct dependencies |
+| Types | `index.d.ts` |
+
+The supported Node.js versions for this fork are declared in `package.json`.
+This fork supports Node.js 20.19+ on the 20.x line, and Node.js 22.12+.
+It also works in Deno and modern browsers.
+
+## Installation
+
+```bash
+npm install @stackline/load-plugin
+```
+
+<a id="install"></a>
 
 This package is [ESM only][esm].
 In Node.js (20.19+ on the 20.x line, or 22.12+), install with [npm][]:
@@ -51,7 +66,14 @@ In Node.js (20.19+ on the 20.x line, or 22.12+), install with [npm][]:
 npm install @stackline/load-plugin
 ```
 
-## Use
+## Usage
+
+```js
+import {resolvePlugin} from '@stackline/load-plugin';
+console.log(await resolvePlugin('./index.js', { cwd: process.cwd() }));
+```
+
+<a id="use"></a>
 
 Say we’re in this project (with dependencies installed):
 
@@ -71,7 +93,13 @@ console.log(await loadPlugin('lint', {prefix: 'remark'}))
 // => [Function: remarkLint]
 ```
 
-## API
+## Security
+
+Resolved plugins execute JavaScript when loaded. Use trusted plugin names and configuration; global-prefix detection itself does not load npm configuration or change the host environment.
+
+## API Surface
+
+<a id="api"></a>
 
 This package exports the identifiers `loadPlugin` and `resolvePlugin`.
 There is no default export.
@@ -135,23 +163,48 @@ returns a promise resolving to an absolute URL (`string`) for `name` instead of
 importing it.
 Throws if `name` cannot be found.
 
-## Types
+### Types
 
 This package is fully typed with [TypeScript][].
 It exports the additional types `ResolveOptions` and `LoadOptions`.
 
-## Compatibility
+## Local Development
 
-The supported Node.js versions for this fork are declared in `package.json`.
-This fork supports Node.js 20.19+ on the 20.x line, and Node.js 22.12+.
-It also works in Deno and modern browsers.
+Clone the [repository](https://github.com/alexandroit/stackline-load-plugin) and run the following commands from its root:
 
-## Contribute
+```bash
+npm ci
+npm run build
+npm test
+npm run lint
+```
+
+The retained upstream development notes below include historical tooling; the commands above are the maintained package checks.
+
+### Contribute
 
 Yes please!
 See [How to Contribute to Open Source][contribute].
 
+## Release Checklist
+
+1. Update the package version, lockfile, generated version fields, and changelog together.
+2. Run the development checks above and audit both `npm audit` and `npm audit --omit=dev`.
+3. Use the [GitHub publish workflow](https://github.com/alexandroit/stackline-load-plugin/actions/workflows/publish.yml) with its `Prod` environment to publish the exact CI tarball.
+4. Verify public npm bytes, package identity, provenance, and the immutable GitHub release evidence.
+
+## Community and Support
+
+Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-load-plugin/issues).
+
+- [Stackline / Alexandro.Net](https://alexandro.net/)
+- [GitHub](https://github.com/alexandroit)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
+
 ## License
+
+[MIT](https://github.com/alexandroit/stackline-load-plugin/blob/main/license). Original copyright notices and upstream attribution are retained.
 
 [MIT][license] © [Titus Wormer][author]
 
@@ -194,3 +247,5 @@ See [How to Contribute to Open Source][contribute].
 [import-meta-resolve]: https://github.com/wooorm/import-meta-resolve
 
 [load-plugin]: #loadpluginname-options
+
+See [NOTICE](https://github.com/alexandroit/stackline-load-plugin/blob/main/NOTICE) for retained attribution.

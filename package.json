@@ -1,19 +1,26 @@
 {
   "name": "@stackline/load-plugin",
-  "version": "1.0.0",
-  "description": "Load a submodule, plugin, or file",
+  "version": "1.0.1",
+  "description": "Resolve and load plugins, submodules, and files with the load-plugin 5 Promise API",
   "license": "MIT",
   "keywords": [
+    "stackline",
     "load",
     "submodule",
     "package",
-    "plugin"
+    "plugin",
+    "resolve",
+    "module",
+    "esm",
+    "nodejs"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexandroit/stackline-load-plugin.git"
   },
-  "bugs": "https://github.com/alexandroit/stackline-load-plugin/issues",
+  "bugs": {
+    "url": "https://github.com/alexandroit/stackline-load-plugin/issues"
+  },
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/wooorm"
