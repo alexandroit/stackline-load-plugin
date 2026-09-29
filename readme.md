@@ -11,7 +11,7 @@
 **[Issues](https://github.com/alexandroit/stackline-load-plugin/issues)** |
 **[Repository](https://github.com/alexandroit/stackline-load-plugin)**
 
-**Package version:** `1.0.1`
+**Package version:** `1.0.2`
 
 ## Why this package?
 
@@ -41,7 +41,7 @@ files.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/load-plugin@1.0.1` |
+| Package | `@stackline/load-plugin@1.0.2` |
 | Supported Node.js | `^20.19.0 || >=22.12.0` |
 | Module entry | `index.js` (ES modules) |
 | Runtime dependencies | 2 direct dependencies |
@@ -249,3 +249,5 @@ Report reproducible package issues in the [issue tracker](https://github.com/ale
 [load-plugin]: #loadpluginname-options
 
 See [NOTICE](https://github.com/alexandroit/stackline-load-plugin/blob/main/NOTICE) for retained attribution.
+
+Dependency maintenance for this release is documented in [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md). `import-meta-resolve` and the development plugin `remark-lint` retain their original import keys and use exact verified Stackline aliases.
