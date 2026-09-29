@@ -1,6 +1,6 @@
 {
   "name": "@stackline/load-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Resolve and load plugins, submodules, and files with the load-plugin 5 Promise API",
   "license": "MIT",
   "keywords": [
