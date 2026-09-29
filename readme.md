@@ -3,15 +3,16 @@
 > Resolve and load plugins, submodules, and files with the load-plugin 5 Promise API.
 
 [![npm version](https://img.shields.io/npm/v/@stackline/load-plugin.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/load-plugin)
-[![license](https://img.shields.io/npm/l/@stackline/load-plugin.svg?style=flat-square)](https://github.com/alexandroit/stackline-load-plugin/blob/main/license)
-[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-load-plugin)
+[![license](https://img.shields.io/npm/l/@stackline/load-plugin.svg?style=flat-square)](https://github.com/alexandroit/stackline-load-plugin)
+[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-load-plugin-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-load-plugin)
+[![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/load-plugin/)
+[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
-**[Documentation](https://github.com/alexandroit/stackline-load-plugin#readme)** |
-**[npm](https://www.npmjs.com/package/@stackline/load-plugin)** |
-**[Issues](https://github.com/alexandroit/stackline-load-plugin/issues)** |
-**[Repository](https://github.com/alexandroit/stackline-load-plugin)**
+**[Documentation](https://alexandro.net/docs/vanilla/load-plugin/)** | **[npm](https://www.npmjs.com/package/@stackline/load-plugin)** | **[Issues](https://github.com/alexandroit/stackline-load-plugin/issues)** | **[Repository](https://github.com/alexandroit/stackline-load-plugin)**
 
-**Package version:** `1.0.2`
+**Current package version:** `1.0.3`
+
+---
 
 ## Why this package?
 
@@ -41,7 +42,7 @@ files.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/load-plugin@1.0.2` |
+| Package | `@stackline/load-plugin@1.0.3` |
 | Supported Node.js | `^20.19.0 || >=22.12.0` |
 | Module entry | `index.js` (ES modules) |
 | Runtime dependencies | 2 direct dependencies |
@@ -193,15 +194,6 @@ See [How to Contribute to Open Source][contribute].
 3. Use the [GitHub publish workflow](https://github.com/alexandroit/stackline-load-plugin/actions/workflows/publish.yml) with its `Prod` environment to publish the exact CI tarball.
 4. Verify public npm bytes, package identity, provenance, and the immutable GitHub release evidence.
 
-## Community and Support
-
-Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-load-plugin/issues).
-
-- [Stackline / Alexandro.Net](https://alexandro.net/)
-- [GitHub](https://github.com/alexandroit)
-- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
-- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
-
 ## License
 
 [MIT](https://github.com/alexandroit/stackline-load-plugin/blob/main/license). Original copyright notices and upstream attribution are retained.
@@ -251,3 +243,23 @@ Report reproducible package issues in the [issue tracker](https://github.com/ale
 See [NOTICE](https://github.com/alexandroit/stackline-load-plugin/blob/main/NOTICE) for retained attribution.
 
 Dependency maintenance for this release is documented in [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md). `import-meta-resolve` and the development plugin `remark-lint` retain their original import keys and use exact verified Stackline aliases.
+
+## Credits and original authors
+
+- Original project: [load-plugin](https://github.com/wooorm/load-plugin).
+- Titus Wormer.
+- Copyright (c) 2016 Titus Wormer <tituswormer@gmail.com>.
+- Stackline modifications Copyright 2026 Stackline contributors.
+- Stackline maintenance: [Alexandro Paixao Marques](https://www.linkedin.com/in/aleinfo/) and [Stackline contributors](https://github.com/alexandroit).
+
+Original copyright, license notices and contributor acknowledgements remain part of this distribution. Stackline maintenance does not replace authorship of the original work.
+
+## Community and Links
+
+- [Stackline website](https://alexandro.net/)
+- [GitHub projects](https://github.com/alexandroit)
+- [npm packages](https://www.npmjs.com/~alex360qc)
+- [Reddit community — r/Stackline](https://www.reddit.com/r/Stackline/)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+
+Use this repository's issue tracker for reproducible bugs and feature requests. Join r/Stackline for examples, usage questions and release discussions.

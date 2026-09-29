@@ -1,18 +1,21 @@
 {
   "name": "@stackline/load-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Resolve and load plugins, submodules, and files with the load-plugin 5 Promise API",
   "license": "MIT",
   "keywords": [
     "stackline",
+    "npm-package",
+    "load-plugin",
+    "typescript",
+    "nodejs",
     "load",
     "submodule",
     "package",
     "plugin",
     "resolve",
     "module",
-    "esm",
-    "nodejs"
+    "esm"
   ],
   "repository": {
     "type": "git",
@@ -64,7 +67,7 @@
     "semi": false,
     "trailingComma": "none"
   },
-  "homepage": "https://github.com/alexandroit/stackline-load-plugin#readme",
+  "homepage": "https://alexandro.net/docs/vanilla/load-plugin/",
   "publishConfig": {
     "access": "public"
   },
