@@ -1,0 +1,30 @@
+{
+  "repository": "alexandroit/stackline-load-plugin",
+  "packages": [
+    {
+      "name": "@stackline/load-plugin",
+      "path": "readme.md",
+      "version": "1.0.3",
+      "baselineVersion": "1.0.2",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "load-plugin",
+        "typescript",
+        "nodejs",
+        "load",
+        "submodule",
+        "package",
+        "plugin",
+        "resolve",
+        "module",
+        "esm"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/load-plugin/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/load-plugin/-/load-plugin-1.0.2.tgz",
+      "baselineIntegrity": "sha512-MLLC4cOBm9sSozEZ//7bgm1wbDoDP5DVXtLMJTWK/9yNwrhFp2l0sikGwW162NQPuXmWZJztDuZavDr1wnGbZg==",
+      "expectedSha512": "4d4a60c62f83002167df7286e599a09c4d3a697e9d70e3bfafc35ac46035cf7a6a31637646bd995dc4a6fc0d7fce7c2bafccc11827ec6ca83fa601416219e1e7",
+      "tag": "docs-stackline-load-plugin-v1.0.3"
+    }
+  ]
+}
