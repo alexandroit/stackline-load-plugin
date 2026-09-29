@@ -4,13 +4,13 @@
 
 [![npm version](https://img.shields.io/npm/v/@stackline/load-plugin.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/load-plugin)
 [![license](https://img.shields.io/npm/l/@stackline/load-plugin.svg?style=flat-square)](https://github.com/alexandroit/stackline-load-plugin)
-[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-load-plugin-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-load-plugin)
+[![GitHub repository](https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-load-plugin)
 [![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/load-plugin/)
 [![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
 **[Documentation](https://alexandro.net/docs/vanilla/load-plugin/)** | **[npm](https://www.npmjs.com/package/@stackline/load-plugin)** | **[Issues](https://github.com/alexandroit/stackline-load-plugin/issues)** | **[Repository](https://github.com/alexandroit/stackline-load-plugin)**
 
-**Current package version:** `1.0.3`
+**Current package version:** `1.0.4`
 
 ---
 
@@ -42,7 +42,7 @@ files.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/load-plugin@1.0.3` |
+| Package | `@stackline/load-plugin@1.0.4` |
 | Supported Node.js | `^20.19.0 || >=22.12.0` |
 | Module entry | `index.js` (ES modules) |
 | Runtime dependencies | 2 direct dependencies |
