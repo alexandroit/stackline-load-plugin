@@ -1,6 +1,6 @@
 {
   "name": "@stackline/load-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Resolve and load plugins, submodules, and files with the load-plugin 5 Promise API",
   "license": "MIT",
   "keywords": [
@@ -44,12 +44,11 @@
     "DEPENDENCY_UPDATES.md"
   ],
   "dependencies": {
-    "@npmcli/config": "^10.13.0",
-    "import-meta-resolve": "npm:@stackline/import-meta-resolve@1.0.0"
+    "import-meta-resolve": "npm:@stackline/import-meta-resolve@1.0.2"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "remark-lint": "npm:@stackline/remark-lint@1.0.0",
+    "remark-lint": "npm:@stackline/remark-lint@1.0.2",
     "typescript": "7.0.2"
   },
   "scripts": {

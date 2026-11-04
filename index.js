@@ -11,8 +11,6 @@ import fs from 'fs'
 import process from 'process'
 import {pathToFileURL, fileURLToPath} from 'url'
 import path from 'path'
-// @ts-expect-error: untyped
-import NpmConfig from '@npmcli/config'
 import {moduleResolve} from 'import-meta-resolve'
 
 const electron = process.versions.electron !== undefined
@@ -24,25 +22,12 @@ const nvm = process.env.NVM_BIN
 /* c8 ignore next */
 const globalsLibrary = windows ? '' : 'lib'
 
-// npmPath is required by modern config constructors. Only loadGlobalPrefix is
-// used here: no npmrc file or npm installation is read from this location.
-const config = new NpmConfig({
-  definitions: {},
-  npmPath: path.dirname(fileURLToPath(import.meta.url))
-})
-
-config.loadGlobalPrefix()
-
-/** @type {string} */
-let npmPrefix = config.globalPrefix
-
-// If there is no prefix defined, use the defaults
-// See: <https://github.com/eush77/npm-prefix/blob/master/index.js>
-/* c8 ignore next 5 */
-if (!npmPrefix) {
-  npmPrefix = windows
-    ? path.dirname(process.execPath)
-    : path.resolve(process.execPath, '../..')
+// Match npm's global prefix rules without loading its workspace/glob machinery.
+let npmPrefix = process.env.PREFIX || (windows
+  ? path.dirname(process.execPath)
+  : path.dirname(path.dirname(process.execPath)))
+if (!process.env.PREFIX && !windows && process.env.DESTDIR) {
+  npmPrefix = path.join(process.env.DESTDIR, npmPrefix)
 }
 
 const globalsDefault = electron || argv.indexOf(npmPrefix) === 0
@@ -50,8 +35,7 @@ let globalDir = path.resolve(npmPrefix, globalsLibrary, 'node_modules')
 
 // If we’re in Electron, we’re running in a modified Node that cannot really
 // install global node modules.
-// To find the actual modules, the user has to set `prefix` somewhere in an
-// `.npmrc` (which is picked up by `libnpmconfig`).
+// An explicit PREFIX environment variable can point to the actual modules.
 // Most people don’t do that, and some use NVM instead to manage different
 // versions of Node.
 // Luckily NVM leaks some environment variables that we can pick up on to try

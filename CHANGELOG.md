@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.5 - 2026-11-04
+
+- Remove @npmcli/config and its vulnerable glob/minimatch dependency closure; compute the same global prefix from Node built-ins.
+- Preserve PREFIX precedence, Unix DESTDIR, Windows defaults, and Electron/NVM behavior with integration regressions.
+- Update import-meta-resolve and development remark-lint aliases to available 1.0.2 releases.
+- Use patched Node.js 22, 24, and 26 in CI and Node.js 24 for publication.
+
 ## 1.0.2 - 2026-09-28
 
 - Pin verified Stackline maintenance forks under the existing dependency import names; see `DEPENDENCY_UPDATES.md`.

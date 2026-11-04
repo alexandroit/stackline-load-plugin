@@ -10,7 +10,7 @@
 
 **[Documentation](https://alexandro.net/docs/vanilla/load-plugin/)** | **[npm](https://www.npmjs.com/package/@stackline/load-plugin)** | **[Issues](https://github.com/alexandroit/stackline-load-plugin/issues)** | **[Repository](https://github.com/alexandroit/stackline-load-plugin)**
 
-**Current package version:** `1.0.4`
+**Current package version:** `1.0.5`
 
 ---
 
@@ -18,7 +18,7 @@
 
 Maintained MIT-licensed fork of `load-plugin@5.1.0`. Preserves its `cwd`, `prefix`, `global`, and `key` options and Promise API. Requires Node.js 20.19+ on the 20.x line, or Node.js 22.12+.
 
-Uses `@npmcli/config@10.13` and `import-meta-resolve@4.2` to remove deprecated glob dependencies and the old resolver's `fs.Stats` warning. Missing-file and directory errors retain the previous fallback behavior. Global prefix detection does not load npm configuration or alter the host environment.
+Uses the maintained `import-meta-resolve` alias and Node built-ins for global prefix detection, without npm workspace, glob, or minimatch dependencies. Missing-file and directory errors retain the previous fallback behavior. Global prefix detection does not load npm configuration or alter the host environment.
 
 Development: `npm ci`, `npm run build`, `npm test`, `npm run lint`. The upstream integration tests and global-prefix/fallback regressions run locally; declarations are generated from the preserved public JSDoc API.
 
@@ -42,10 +42,10 @@ files.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/load-plugin@1.0.4` |
+| Package | `@stackline/load-plugin@1.0.5` |
 | Supported Node.js | `^20.19.0 || >=22.12.0` |
 | Module entry | `index.js` (ES modules) |
-| Runtime dependencies | 2 direct dependencies |
+| Runtime dependencies | 1 direct dependency |
 | Types | `index.d.ts` |
 
 The supported Node.js versions for this fork are declared in `package.json`.
@@ -139,8 +139,7 @@ global mode: either because it’s in Electron, or because a globally installed
 package is running it.
 
 Note: Electron runs its own version of Node instead of your system Node.
-That means global packages cannot be found, unless you’ve [set-up][] a [`prefix`
-in your `.npmrc`][prefix] or are using [nvm][] to manage your system node.
+That means global packages cannot be found, unless you set the `PREFIX` environment variable or use [nvm][] to manage your system Node.js.
 
 ###### `options.key`
 
