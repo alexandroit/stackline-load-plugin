@@ -44,7 +44,7 @@
     "DEPENDENCY_UPDATES.md"
   ],
   "dependencies": {
-    "import-meta-resolve": "npm:@stackline/import-meta-resolve@1.0.2"
+    "import-meta-resolve": "npm:@stackline/import-meta-resolve@1.0.3"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
